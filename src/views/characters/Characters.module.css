@@ -1,0 +1,4 @@
+.container{ background: url('../../assets/svg/Group.svg');
+    background-repeat: repeat;
+    min-height: 100vh;
+}

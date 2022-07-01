@@ -1,0 +1,18 @@
+.container{
+    position: fixed;
+    width: 100%;
+    
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    list-style: none;
+    
+}
+
+.navLink{
+    text-decoration: none;
+    color: white;
+}
