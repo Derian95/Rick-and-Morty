@@ -8,7 +8,7 @@ const SvgComponent = (props) => (
       alignContent: 'center',
       marginBottom: '60px',
       height: '30%',
-      width: '70%',
+      width: '80%',
     }}
   >
     <Link to='/'>

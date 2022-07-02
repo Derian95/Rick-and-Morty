@@ -1,7 +1,13 @@
 .container{
     position: fixed;
     width: 100%;
+    padding: 15px;
+    z-index: 10;
     
+}
+.contain{
+    width: 100%;
+    height: 50px;
 }
 .navbar{
     display: flex;
@@ -15,4 +21,29 @@
 .navLink{
     text-decoration: none;
     color: white;
+    
+}
+.navLink::after{
+    content: "";
+    display: block;
+    width: 0%;
+    background-color: white;
+    height: 2px;
+    transition: all .5s;
+
+}
+.navLink:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: white;
+    height: 2px;
+}
+
+.selected::after{
+    content: "";
+    display: block;
+    width: 100%;
+    background-color: white;
+    height: 2px;
 }

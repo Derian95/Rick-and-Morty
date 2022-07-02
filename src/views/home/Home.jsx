@@ -1,4 +1,3 @@
-import Search from '../../components/search/Search'
 import styles from './Home.module.css'
 import imgHome from '../../assets/img/homeImg.png'
 import portal from '../../assets/img/portal.png'
@@ -10,7 +9,8 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.search}>
         <Logo />
-        <Search />
+        <p>Web application that uses api de rick and morty to make queries <br/>-by Derian Francisco Herrera Amezquita -2022
+        </p>
       </div>
       <motion.div
         initial={{ opacity: 0 }}
@@ -41,6 +41,8 @@ export default function Home() {
           alt=''
         />
       </motion.div>
+      
     </div>
+    
   )
 }

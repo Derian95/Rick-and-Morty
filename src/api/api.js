@@ -10,7 +10,7 @@ export const getCharacters = async (page) => {
 
 export const searchCharacter= async(name) => {
   const response = await axios.get(BASE_URL_API + 'character/?name='+name)
-  console.log(response.data)
+  console.log(response)
   return response.data.results
 }
 

@@ -2,20 +2,19 @@ import {NavLink} from 'react-router-dom'
 import styles from './NavBar.module.css'
 export default function Navbar() {
 
-    let activeStyle = {
-        textDecoration: "underline",
-      }
+      
     
   return (
+
     <nav className={styles.container}>
       <ul className={styles.navbar}>
+
         <li>
           <NavLink
-          className={styles.navLink}
             to="/"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) =>
+            isActive ? `${styles.navLink} ${styles.selected}` : styles.navLink
+          }
           >
             Home
           </NavLink>
@@ -23,11 +22,10 @@ export default function Navbar() {
       
         <li>
         <NavLink
-          className={styles.navLink}
             to="/characters"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) =>
+            isActive ? `${styles.navLink} ${styles.selected}` : styles.navLink
+          }
           >
             Characters
           </NavLink>
@@ -35,22 +33,19 @@ export default function Navbar() {
 
         <li>
         <NavLink
-          className={styles.navLink}
             to="/characters"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) =>
+            isActive ? `${styles.navLink} ${styles.selected}` : styles.navLink
+          }
           >
             Episodes
           </NavLink>
         </li>
         <li>
         <NavLink
-          className={styles.navLink}
             to="/characters"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
+            className={({ isActive }) =>
+            isActive ? `${styles.navLink} ${styles.selected}` : styles.navLink}
           >
             Zones
           </NavLink>
@@ -58,5 +53,6 @@ export default function Navbar() {
        
       </ul>
     </nav>
+
   )
 }

@@ -4,6 +4,7 @@ import InfiniteScroll from 'react-infinite-scroll-component'
 import styles from './List.module.css'
 import Card from '../card/Card'
 import {motion} from 'framer-motion'
+import Search from '../search/Search'
 const container = {
   show: {
       opacity: 1,
@@ -41,8 +42,7 @@ export default function List() {
 
   return (
     <main >
-        <p>Lista de 20 caracteres</p>
-
+      <Search/>
       <InfiniteScroll
       className={styles.container}
         dataLength={characters.length}
