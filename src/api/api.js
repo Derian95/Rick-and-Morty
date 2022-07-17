@@ -4,7 +4,6 @@ const BASE_URL_API = 'https://rickandmortyapi.com/api/'
 
 export const getCharacters = async (page) => {
     const response = await axios.get(BASE_URL_API + 'character/?page=' + page)
-    console.log(BASE_URL_API + 'character')
     return response.data.results
 }
 
@@ -22,7 +21,6 @@ export const searchCharacter = async (name) => {
 export const getCharacter = async (id) => {
     try {
         const response = await axios.get(BASE_URL_API + 'character/' + id)
-        console.log(response)
 
         return response.data
     } catch (error) {
