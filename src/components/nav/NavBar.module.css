@@ -1,49 +1,147 @@
-.container{
+.container {
     position: fixed;
     width: 100%;
     padding: 15px;
     z-index: 10;
-    
 }
-.contain{
+.container button {
+    display: none;
+}
+.contain {
     width: 100%;
     height: 50px;
 }
-.navbar{
+.navbar {
     display: flex;
     justify-content: space-around;
     width: 100%;
     align-items: center;
     list-style: none;
-    
 }
 
-.navLink{
+.navLink {
     text-decoration: none;
     color: white;
-    
 }
-.navLink::after{
-    content: "";
+.navLink::after {
+    content: '';
     display: block;
     width: 0%;
     background-color: white;
     height: 2px;
-    transition: all .5s;
-
+    transition: all 0.5s;
 }
-.navLink:hover::after{
-    content: "";
+.navLink:hover::after {
+    content: '';
     display: block;
     width: 100%;
     background-color: white;
     height: 2px;
 }
 
-.selected::after{
-    content: "";
+.selected::after {
+    content: '';
     display: block;
     width: 100%;
     background-color: white;
     height: 2px;
+}
+
+.activeNav {
+    right: 100%;
+    background-color: orange;
+}
+
+.noActiveNav {
+    right: 0;
+}
+.navResponsive {
+    display: none;
+}
+
+.hm {
+    height: 30px;
+    width: 30px;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 10px;
+    display: none;
+}
+.line1 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 1s;
+    position: absolute;
+    transform: translateY(-6px);
+
+}
+.line2 {
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 1s;
+}
+
+.line3 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 1s;
+    position: absolute;
+    transform: translateY(6px);
+}
+
+.lineClick1 {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transform: translateY(-6px) rotateZ(45deg);
+    position: absolute;
+    transition: all 1s;
+}
+.lineClick2 {
+    position: absolute;
+    transition: all 1s;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transform: translateY(-6px) rotateZ(-45deg);
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 0;
+    }
+    .container button {
+        display: block;
+    }
+    .navLink {
+        display: none;
+    }
+    .navResponsive {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 200px;
+        padding: 20px;
+        background-color: rgba(58, 58, 58, 0.945);
+        list-style: none;
+        justify-content: space-around;
+        position: relative;
+        transition: all 1s;
+    }
+    .navLinkRes {
+        text-decoration: none;
+        color: white;
+    }
+    .hm{
+        display: block;
+    }
 }

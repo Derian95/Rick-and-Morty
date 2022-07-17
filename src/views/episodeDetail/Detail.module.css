@@ -1,0 +1,12 @@
+.container{
+    min-height: 100vh;
+    background: url('../../assets/svg/Group.svg');
+    padding-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 20px;
+    grid-auto-rows: 260px;
+    padding: 20px;
+    padding-top: 80px;
+
+}

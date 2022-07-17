@@ -1,50 +1,35 @@
 import { useState, useEffect } from 'react'
-import { getCharacters } from '../../api/api'
+import { getCharacters,searchCharacter } from '../../api/api'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import styles from './List.module.css'
 import Card from '../card/Card'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import Search from '../search/Search'
-const container = {
-  show: {
-      opacity: 1,
-      transition: {
-          staggerChildren: 4.8,
-      },
-  },
-  hidden: {
-      opacity: 0
-  },
-};
 
-const children = {
-  show: {
-      opacity: 1
-  },
-  hidden: {
-      opacity: 0
-  }
-
-}
 
 export default function List() {
   const [characters, setCharacters] = useState([])
   const [page, setPage] = useState(1)
+  const [error, setError] = useState(false)
 
   const getResults = async (numberPage) => {
     const result = await getCharacters(numberPage)
     setCharacters((prevCharactes) => prevCharactes.concat(result))
   }
 
+ 
+
   useEffect(() => {
     getResults(page)
   }, [page])
 
+
   return (
-    <main >
-      <Search/>
+    <main>
+      <Search setSearch={setCharacters} setError={setError}/>
+      {error && <p className={styles.messageError}>Character not found</p>}
       <InfiniteScroll
-      className={styles.container}
+        className={styles.container}
         dataLength={characters.length}
         next={() => setPage((prevPage) => prevPage + 1)}
         hasMore={true}
@@ -56,7 +41,7 @@ export default function List() {
         }
       >
         {characters.map((character, idx) => (
-          <Card key={idx} data={character}/>
+          <Card key={idx} data={character} />
         ))}
       </InfiniteScroll>
     </main>

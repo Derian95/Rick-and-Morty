@@ -1,0 +1,9 @@
+.container {
+    background-color: #42b4ca;
+    padding: 10px;
+    clip-path: polygon(0 92%, 0 0, 17% 0, 90% 0, 100% 9%, 100% 92%, 100% 100%, 8% 100%);
+    color: #161A1B;
+    border:  #78FF39 3px solid;
+  
+
+}
